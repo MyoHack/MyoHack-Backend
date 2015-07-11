@@ -1,0 +1,36 @@
+<script>
+var dispatcher = new WebSocketRails('localhost:3000/websocket');
+dispatcher.on_open = function(data) {
+  console.log('Connection has been established: ', data);
+  // You can trigger new server events inside this callback if you wish.
+}
+
+var success = function(response) {
+  console.log("Wow it worked: ", response);
+ // playSound();
+}
+
+var failure = function(response) {
+  console.log("That just totally failed: ",response);
+}
+
+var playSound = function() {
+  var sound = new Howl({
+    urls: ['sounds/snap7.wav'],
+    autoplay: true,
+    loop: false,
+    volume: 0.5,
+    onend: function() {
+      console.log('Finished!');
+    }
+  });
+  sound.play();
+}
+var object_to_send = { data: 'F' }
+
+dispatcher.trigger('hit', object_to_send, success, failure);
+
+
+</script>
+
+yo
