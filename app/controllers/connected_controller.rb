@@ -5,10 +5,20 @@ class ConnectedController < WebsocketRails::BaseController
   end
 
   def hit
-    puts "received hit" + message
-    WebsocketRails[:sound].trigger(:sound, "hit" );
-    puts "sending to sound socket"
+    puts "received hit, playing " + message
+    WebsocketRails[:sound].trigger(:hit, message );
     trigger_success "play hit"
-    puts "PLAYED HIT"
+  end
+
+  def kick
+    puts "received kick, playing " + message
+    WebsocketRails[:sound].trigger(:kick, message );
+    trigger_success "play kick"
+  end
+
+  def snare
+    puts "received snare, playing " + message
+    WebsocketRails[:sound].trigger(:snare, message );
+    trigger_success "play snare"
   end
 end
