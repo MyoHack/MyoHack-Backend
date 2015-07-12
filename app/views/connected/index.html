@@ -1,7 +1,54 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <title>WebSocket Test</title>
+<!--style by Jay-->
+<style>
+	h2
+	{
+		text-align:center;
+	}
+	img#drums
+	{
+		text-align:center;
+		margin:auto;
+	}
+	div.center
+	{
+		width:200px;
+		margin:auto;
+	}
+	div.center
+	{
+		margin:auto;
+		text-align:center;
+	}
+	table
+	{
+		margin:auto;
+		border:1px solid black;
+	}
+	th
+	{
+		border:1px solid black;
+		text-align:center;
+		width:100px;
+	}
+	div.table-container
+	{
+		margin:auto;
+	}
+	div.table-center
+	{
+		text-align:center;
+		margin:auto;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
 <script language="javascript" type="text/javascript">
+
+	/*$(document).ready(function() {
+		$("#th-kick").css("color","red");
+	});*/
 
    var dispatcher = new WebSocketRails('ws://45.55.88.179:3000/websocket');
 
@@ -59,4 +106,18 @@
    });
 </script>
 <h2>WebSocket Test</h2>
+<div class="container">
+	<div class="center">
+		<img src="http://az58332.vo.msecnd.net/e88dd2e9fff747f090c792316c22131c/Images/Products20180-1200x1200-1592542.jpg" alt="Drums" width="200px" id="drums" />
+	</div>
+</div>
+<div class="table-container">
+	<div class="table-center">
+		<table>
+			<th id = "th-kick">KICK</th>
+			<th id = "th-snare">SNARE</th>
+			<th id = "th-hit">HIT</th>
+		</table>
+	</div>
+</div>
 <div id="output"></div>
