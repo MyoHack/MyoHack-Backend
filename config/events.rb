@@ -8,6 +8,7 @@ WebsocketRails::EventMap.describe do
   subscribe :hit,              :to => ConnectedController, :with_method => :hit
   subscribe :kick,             :to => ConnectedController, :with_method => :kick
   subscribe :snare,            :to => ConnectedController, :with_method => :snare
+  subscribe :start,            :to => ConnectedController, :with_method => :start
 
   #
   # Here is an example of mapping namespaced events:

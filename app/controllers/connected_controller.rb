@@ -21,4 +21,10 @@ class ConnectedController < WebsocketRails::BaseController
     WebsocketRails[:sound].trigger(:snare, message );
     trigger_success "play snare"
   end
+
+  def start
+    puts "received start, playing " + message
+    WebsocketRails[:sound].trigger(:start, message );
+    trigger_success "play start"
+  end
 end

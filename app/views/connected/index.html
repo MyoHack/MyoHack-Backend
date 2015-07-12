@@ -26,6 +26,18 @@
      });
      sound.play();
    }
+   var playZelda = function() {
+     var sound = new Howl({
+       urls: ['sounds/zelda.mp3'],
+       autoplay: true,
+       loop: false,
+       volume: 1,
+       onend: function() {
+         console.log('Finished!');
+       }
+     });
+     sound.play();
+   }
    channel.bind('hit', function(data) {
      playSound(data, 'hit');
      console.log('channel event received: ' + data);
@@ -38,6 +50,11 @@
 
    channel.bind('snare', function(data) {
      playSound(data, 'snare');
+     console.log('channel event received: ' + data);
+   });
+
+   channel.bind('start', function(data) {
+     playZelda();
      console.log('channel event received: ' + data);
    });
 </script>
